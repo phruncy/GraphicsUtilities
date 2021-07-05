@@ -15,8 +15,24 @@ if(GIT_FOUND AND EXISTS "${PROJECT_SOURCE_DIR}/.git")
     endif()
 endif()
 
-if(NOT EXISTS "${PROJECT_SOURCE_DIR}/Tests/googletest/CMakeLists.txt")
+if(NOT EXISTS "${PROJECT_SOURCE_DIR}/external/googletest/CMakeLists.txt")
     message(FATAL_ERROR "The submodules were not downloaded! GIT_SUBMODULE was turned off or failed. Please update submodules and try again.")
 endif()
 
-include_directories(googletest)
+
+
+# name the test binary
+set (TEST_BINARY ${PROJECT_NAME}_test)
+# test executable
+add_executable(${TEST_BINARY}
+    "Vector3Test.cpp"
+    "main.cpp"
+)
+
+target_include_directories(${TEST_BINARY} PUBLIC ${PROJECT_SOURCE_DIR}/src)
+
+# add test and set its execution (tat is running the test executable)
+add_test(NAME ${TEST_BINARY} COMMAND ${TEST_BINARY})
+
+# link library to be tested
+target_link_libraries(${TEST_BINARY} PUBLIC ${PROJECT_NAME}_lib gtest)

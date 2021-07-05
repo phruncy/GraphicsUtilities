@@ -1,2 +1,6 @@
 # VectorLib
-A collection of reusable vector types 
+A header-only collection of reusable vector types 
+
+## Dependencies
+
+Tests use googleTests
