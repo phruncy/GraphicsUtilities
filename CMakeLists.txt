@@ -6,13 +6,13 @@ project(GraphicsUtilities CXX)
 
 enable_testing()
 
-option(BUILD_LIB_TESTS "Build the library tests" ON)
+option(BUILD_LIB_TESTS "Build the library tests" OFF)
 
 # don't build the tests by default 
 if (BUILD_LIB_TESTS)
-include_directories(${PROJECT_SOURCE_DIR}/external/googletest)
-add_subdirectory(external/googletest)
-add_subdirectory(Tests)
+    include_directories(${PROJECT_SOURCE_DIR}/external/googletest)
+    add_subdirectory(external/googletest)
+    add_subdirectory(Tests)
 endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/src)

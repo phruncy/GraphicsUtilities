@@ -1,6 +1,6 @@
 set(targetName ${PROJECT_NAME}_lib)
 
-add_library(${targetName} INTERFACE "Vector3.h")
+add_library(${targetName} INTERFACE)
 
 target_include_directories(${targetName} INTERFACE "${PROJECT_SOURCE_DIR}/src")
 
