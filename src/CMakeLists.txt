@@ -1,3 +1,9 @@
-add_library(${PROJECT_NAME}_lib INTERFACE "Vector3.h")
+set(targetName ${PROJECT_NAME}_lib)
 
-target_include_directories(${PROJECT_NAME}_lib INTERFACE "${PROJECT_SOURCE_DIR}/src")
+add_library(${targetName} INTERFACE "Vector3.h")
+
+target_include_directories(${targetName} INTERFACE "${PROJECT_SOURCE_DIR}/src")
+
+#installing the library
+install(TARGETS ${targetName} DESTINATION lib)
+install(FILES "Vector3.h" DESTINATION include)
