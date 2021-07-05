@@ -15,7 +15,7 @@ if (BUILD_LIB_TESTS)
     add_subdirectory(Tests)
 endif()
 
-include_directories(${PROJECT_SOURCE_DIR}/src)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_subdirectory(src)
 
