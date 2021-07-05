@@ -1,0 +1,1 @@
+add_library(Vector STATIC "Vector3.h" "Vector3.cpp")
