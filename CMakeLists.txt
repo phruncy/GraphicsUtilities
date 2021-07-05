@@ -20,4 +20,3 @@ include_directories(${PROJECT_SOURCE_DIR}/src)
 add_subdirectory(src)
 
 set(VECTORLIB_INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/src)
-message("Source Dir: ${VECTORLIB_INCLUDE}")
